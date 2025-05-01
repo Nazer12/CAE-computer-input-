@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحة الروابط التفاعلية</title>
+  <!-- ربط ملف CSS الخارجي -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- قسم المحتوى الذي سيتم تصديره -->
+  <div id="exportContent">
+    <h1 id="pageTitle">صفحة الروابط التفاعلية</h1>
+    <div id="customElementsContainer">
+      <!-- ستظهر هنا العناصر المضافة ديناميكيًا -->
+    </div>
+  </div>
+
+  <!-- لوحة التحكم لإضافة وتعديل العناصر -->
+  <div class="control-panel">
+    <h2>لوحة التحكم</h2>
+    <!-- تعديل عنوان الصفحة -->
+    <input type="text" id="titleInput" placeholder="تعديل عنوان الصفحة">
+    <button class="btn" onclick="updateTitle()">تحديث العنوان</button>
+    <!-- اختيار نوع العنصر -->
+    <select id="elementType">
+      <option value="link">رابط</option>
+      <option value="button">زر</option>
+      <option value="code">كود</option>
+    </select>
+    <!-- حقل نص العنصر -->
+    <input type="text" id="elementText" placeholder="نص العنصر">
+    <!-- حقل الرابط (اختياري) -->
+    <input type="text" id="elementURL" placeholder="الرابط (اختياري)">
+    <!-- حقل الوصف الذي يظهر أسفل العنصر -->
+    <input type="text" id="elementDescription" placeholder="وصف العنصر (يظهر أسفل العنصر)">
+    <!-- حقل الكود البرمجي يظهر فقط عند اختيار كود -->
+    <textarea id="elementCode" placeholder="أدخل الكود البرمجي هنا" style="display: none;"></textarea>
+    <!-- خيار تغيير لون الخلفية للنسخة المصدرة -->
+    <input type="color" id="bgColor" value="#ffffff" title="اختر لون الخلفية للنسخة المصدرة">
+    <!-- أزرار الإضافة والتعديل -->
+    <button class="btn" id="addBtn" onclick="addElement()">أضف العنصر</button>
+    <button class="cancel-btn" id="cancelEditBtn" onclick="cancelEdit()" style="display: none;">إلغاء التعديل</button>
+    <!-- زر مسح كل العناصر -->
+    <button class="btn" onclick="clearElements()">مسح كل العناصر</button>
+    <!-- حقل لتسمية النسخة المصدرة -->
+    <input type="text" id="exportFileName" placeholder="اسم النسخة المصدرة">
+    <!-- زر تصدير الصفحة -->
+    <button class="btn" onclick="exportPage()">تصدير الصفحة</button>
+  </div>
+
+  <!-- ربط ملف JavaScript الخارجي -->
+  <script src="script.js"></script>
+</body>
+</html>
